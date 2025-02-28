@@ -31,14 +31,16 @@ function scrollToSection(sectionId) {
 
         section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         
-        setTimeout(() => {
-            // Scrolling finished
-            window.addEventListener('scrollend', () => {
-                jumpingToSection = false;
-                contentTitle.textContent = sectionTitles[section.id];
-        //        setActiveMenuItem(sectionId);
-            }, { once: true });
-        }, 500);
+//        setTimeout(() => {
+        // Scrolling finished
+        window.addEventListener('scrollend', () => {
+            jumpingToSection = false;
+            contentTitle.textContent = sectionTitles[section.id];
+            setActiveMenuItem(activeCard.id, false);
+            setupCardStyle(activeCard, true);
+    //        setActiveMenuItem(sectionId);
+        }, { once: true });
+//        }, 500);
         
         
     }
@@ -82,14 +84,12 @@ function setupCardStyle(cardd, active) {
     if (active) {
         if (!cardd.classList.contains('visible')) {
             cardd.classList.add('visible');
-            console.log("TURN ON ", cardd.id);
         }
 //        cardd.style.opacity = 1;
 //        cardd.style.transform = 'translateX(0px)';
     } else {
         if (cardd.classList.contains('visible')) {
             cardd.classList.remove('visible');
-            console.log("TURN OFF ", cardd.id);
         }
 //        cardd.style.opacity = 0;
 //        cardd.style.transform = 'translateX(8.125rem)';
@@ -106,11 +106,13 @@ function show_section(card) {
         // update active
         activeCard = card;
         directionOnChange = scrollDirection;
-
+        
+        
+        if (jumpingToSection) return;
         // setup new style for active
         setupCardStyle(activeCard, true);
         
-        if (jumpingToSection) return;
+        //if (jumpingToSection) return;
         
         // change current title
         const newTitle = sectionTitles[activeCard.id];
@@ -198,6 +200,19 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll);
 
+window.onload = async function() {
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get('section');
+    console.log(section);
+    
+    if (section) {
+//        show_content(section);
+        scrollToSection(section);
+    } else {
+        scrollToSection('about');
+    }
+};
+
 
 
 // Initial setup
@@ -225,6 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    scrollToSection('about'); // Ensure starting state is correct
+    //scrollToSection('about'); // Ensure starting state is correct
     
 });
