@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamara Mijic Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Top Quick Access Menu with Icons (right-aligned) -->
+    <header id="header">
+        <div id="header-content">
+            <h2 id="header-title">Hello!</h2>
+            <div class="menu">
+                <div id="aboutMenu" class="menu-item active" onclick="scrollToSection('about')">
+                    <img src="icons/about-selected.png" alt="About" class="menu-icon">
+                    <h2 class="menu-text">About me</h2>
+                </div>
+                <div id="projectsMenu" class="menu-item" onclick="scrollToSection('projects')">
+                    <img src="icons/projects.png" alt="Projects" class="menu-icon">
+                    <h2 class="menu-text">Projects</h2>
+                </div>
+                <div id="skillsMenu" class="menu-item" onclick="scrollToSection('skills')">
+                    <img src="icons/skill.png" alt="Skills" class="menu-icon">
+                    <h2 class="menu-text">Skills</h2>
+                </div>
+                <div id="contactMenu" class="menu-item" onclick="scrollToSection('contact')">
+                    <img src="icons/contact.png" alt="Contact" class="menu-icon">
+                    <h2 class="menu-text">Contact</h2>
+                </div>
+                <div id="Menu" class="dropdown" onclick="openMenu()">
+                    <img src="icons/menu.png" alt="Contact" class="menu-icon">
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a id="aboutDrop"><h3>About me</h3></a></li>
+                        <li class="dropdown-item"><a id="projectsDrop"><h3>Projects</h3></a></li>
+                        <li class="dropdown-item"><a id="skillsDrop"><h3>Skills</h3></a></li>
+                        <li class="dropdown-item"><a id="contactDrop"><h3>Contact</h3></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area with minimized side cards -->
+    <main id="main-content">
+        <section id="main-card">
+            <div id="about" class="card visible">
+                <img id="about-small-img" src="icons/tamaramijic.jpg" />
+                <div>
+                    <p>My name is <span class="highlight">Tamara Mijić</span>.</p>
+                    <p>I am an <span class="highlight">engineer</span> passionate about automating processes and optimizing workflows. With a Master's degree in Animation Engineering and experience as a Tool Engineer for DCC, I bring a strong technical mindset and problem-solving skills that enable me to develop efficient and scalable solutions across various domains. Versatile and curious, I excel at tackling complex challenges, improving systems, and building tools that drive productivity and performance.</p>
+                </div>
+                <img id="about-big-img" src="icons/tamaramijic.jpg" />
+            </div>
+            
+            <div id="projects" class="card">
+                <div class="">
+                    <!-- experience, freelance work, academic background, -->
+                    <h2>My experience spans across multiple domains.<br>This section highlights some of the key projects I have contributed to, categorized based on my professional experience, academic background, and additional creative initiatives that showcase my creativity and technical versatility beyond tool development and 3D graphics.</h2>
+                    <div>
+                        <div id="playstudios" class="project-categories">
+                            <div class="category" id="multi-project-1">
+                                <h3>Professional Projects<br>as Tool Engineer</h3>
+                                <div class="multi-project-names">
+                                    <p>Explore my key contributions and achievements as a Tool Engineer, where I developed solutions to streamline workflows and enhance productivity.</p>
+                                    <div>
+                                        <a href="projects.html?project=pipeline">Pipeline Tool</a>
+                                        <a href="projects.html?project=match-vertices">Match Vertex Weights Tool</a>
+                                        <a href="projects.html?project=pack-atlases">Pack into Atlases Tool</a>
+                                        <a href="projects.html?project=web-app">Web App</a>
+                                    </div>
+                                    <a href="projects.html#professional"class="projects-button">Read more</a>
+                                </div>
+                            </div>
+<!--
+                            <div class="category" id="multi-project-2">
+                                <h3>Freelance</h3>
+                                <div class="multi-project-names">
+                                    <p>A glimpse into my freelance work, where I tackled diverse challenges in animation, rigging, and tool development.</p>
+                                    <div>
+                                        <a href="#">EvoFashion Blendshapes</a>
+                                        <a href="#">Animation Generator</a>
+                                    </div>
+                                    <a href="projects.html#freelance" class="projects-button">Read more</a>
+                                </div>
+                            </div>
+-->
+                            <div class="category" id="multi-project-3">
+                                <h3>Education</h3>
+                                <div class="multi-project-names">
+                                    <p>Discover my academic projects, including my Master’s and Bachelor’s theses, along with early modeling and animation works that built my foundation.</p>
+                                    <div>
+                                        <a href="projects.html?project=master">Master’s Thesis</a>
+                                        <span>"Automatic system for detailed face rig based on blendshapes in Maya"</span>
+                                        <a href="projects.html?project=bachelor">Bachelor’s Thesis</a>
+                                        <span>"Automatic system for full body rig in Maya"</span>
+                                        <a href="projects.html?project=modeling">Modeling Projects</a>
+                                        <a href="projects.html?project=animation">Animation Projects</a>
+                                    </div>
+                                    <a href="projects.html#education" class="projects-button">Read more</a>
+                                </div>
+                            </div>
+                            <div class="category" id="multi-project-4">
+                                <h3>Additional Projects</h3>
+                                <div class="multi-project-names">
+                                    <p>A showcase of my work beyond tool engineering, including web development, design, and interior visualization projects.</p>
+                                    <div>
+                                        <a href="projects.html?project=web-dev">Web Development</a>
+                                        <a href="projects.html?project=design">Design</a>
+                                        <a href="projects.html?project=interior">Interior Visualization</a>
+                                    </div>
+                                    <a href="projects.html#additional" class="projects-button">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+
+            <div id="skills" class="card">
+                <div class="content">
+                    <div>
+                        <h3 class="highlight">Technical Skills</h3>
+                        <p>Python, C#, JavaScript, Swift, C++, SQL...</p>
+                        <p>HTML, CSS, JS, React, REST APIs...</p>
+                        <p>Maya, Unity, Photoshop, After Effects, UE4...</p>
+                        <h3 class="highlight">Secondary Skills</h3>
+                        <p>Modeling, rigging, animation, design (as a generalist)</p>
+                        <h3 class="highlight">Soft Skills:</h3>
+                        <p>Problem-solving, quick learning, flexibility, attention to detail...</p>
+                    </div>
+                    <img src="icons/skills2.png" />
+                </div>
+            </div>
+
+            <div id="contact" class="card">
+                <h1>Let's Work Together</h1>
+                <p id="contact-description">
+                    Have a project in mind, a job opportunity, or just want to say hi?<br> 
+                    Feel free to reach out — I’d love to hear from you!
+                </p>
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <h1>Connect with Me</h1>
+                        <a href="https://www.linkedin.com/in/tamara-mijic-98b478173/" target="_blank" class="contact-button linkedin">
+                            <h2>LinkedIn</h2>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <h1>Email Me</h1>
+                        <a href="mailto:tamara.ledy.96@gmail.com" class="contact-button email">
+                            <h2>tamara.ledy.96@gmail.com</h2>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <h1>Get My Resume</h1>
+                        <a href="Resume_Tamara_Mijic.png" target="_blank" download="Resume_Tamara_Mijic.png" class="contact-button linkedin">
+                            <h2>Resume</h2>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="thank-you highlight">Thank You for Visiting!</p>
+            </div>
+
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tamara Mijić. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
