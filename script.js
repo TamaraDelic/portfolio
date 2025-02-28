@@ -29,7 +29,7 @@ function scrollToSection(sectionId) {
     
         waitingFor = sectionId;
 
-        section.scrollIntoView({ behavior: 'auto', block: 'start', inline: 'start' });
+        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
         
         setTimeout(() => {
             // Scrolling finished
