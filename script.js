@@ -19,30 +19,48 @@ let jumpingToSection = false; // Flag to track menu click scrolling
 
 
 
-// Function to scroll to a section and trigger card transition
+//// Function to scroll to a section and trigger card transition
+//function scrollToSection(sectionId) {
+//    jumpingToSection = true;
+//
+//    const section = document.getElementById(sectionId);
+//    
+//    if (section) {
+//
+//        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+//        
+////        setTimeout(() => {
+//        // Scrolling finished
+//        window.addEventListener('scrollend', () => {
+//            jumpingToSection = false;
+//            contentTitle.textContent = sectionTitles[section.id];
+//            setActiveMenuItem(activeCard.id, false);
+//            setupCardStyle(activeCard, true);
+//    //        setActiveMenuItem(sectionId);
+//        }, { once: true });
+////        }, 500);
+//        
+//        
+//    }
+//}
+
 function scrollToSection(sectionId) {
     jumpingToSection = true;
 
     const section = document.getElementById(sectionId);
     
     if (section) {
-    
-        waitingFor = sectionId;
+        const yOffset = -50; // Adjust for fixed headers if needed
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
 
-        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-        
-//        setTimeout(() => {
-        // Scrolling finished
-        window.addEventListener('scrollend', () => {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+
+        setTimeout(() => {
             jumpingToSection = false;
             contentTitle.textContent = sectionTitles[section.id];
             setActiveMenuItem(activeCard.id, false);
             setupCardStyle(activeCard, true);
-    //        setActiveMenuItem(sectionId);
-        }, { once: true });
-//        }, 500);
-        
-        
+        }, 500); // Adjust timeout based on scroll speed
     }
 }
 
@@ -164,9 +182,6 @@ function onScroll() {
         // bottom of the card
         const cardEnd = rect.top + rect.height;
         
-        // get card id
-        cardID = card.id;
-        
         // check if card has condition to be active card
         if (cardStart <= lastViewportThird && cardEnd >= firstViewportThird) {
             show_section(card);
@@ -203,7 +218,6 @@ window.addEventListener('scroll', onScroll);
 window.onload = async function() {
     const params = new URLSearchParams(window.location.search);
     const section = params.get('section');
-    console.log(section);
     
     if (section) {
 //        show_content(section);
