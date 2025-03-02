@@ -952,6 +952,7 @@ p.highlight2 {
 
 .dots {
     list-style: circle;
+    padding-left: 2rem;
 }
 
 .project-text {
@@ -970,6 +971,9 @@ p.highlight2 {
 }
 
 @media (max-width: 950px) {
+    ul {
+        padding: 0;
+    }
     .project-inline {
         padding: 0 1rem;
         display: flex;
