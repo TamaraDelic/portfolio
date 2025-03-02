@@ -1067,11 +1067,27 @@ p.highlight2 {
     .content-card span.highlight {
         font-size: var(--xs-font-size) !important;
     }
+    .content-card p.highlight2 {
+        font-size: 0.85rem !important;
+        text-align: left;
+    }
 }
 
 iframe {
     flex-shrink: 0;
+    min-height: 170px !important;
+    height: 253px !important;
+    max-height: 253px !important;
 }
+
+/*
+@media (max-width: 750px) {
+    iframe {
+        min-height: 170px !important;
+    }
+}
+*/
+
 
 .project-text iframe {
     margin: 0rem 2.5rem;
