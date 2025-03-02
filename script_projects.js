@@ -114,7 +114,7 @@ window.onload = async function() {
     
     if (project) {
         show_content(project + "-content");
-        scrollToContent(project);
+        scrollToContent(project, );
     }
 };
 
