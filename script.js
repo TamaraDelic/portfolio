@@ -17,33 +17,6 @@ const contentTitle = document.getElementById("header-title");
 
 let jumpingToSection = false; // Flag to track menu click scrolling
 
-
-
-//// Function to scroll to a section and trigger card transition
-//function scrollToSection(sectionId) {
-//    jumpingToSection = true;
-//
-//    const section = document.getElementById(sectionId);
-//    
-//    if (section) {
-//
-//        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-//        
-////        setTimeout(() => {
-//        // Scrolling finished
-//        window.addEventListener('scrollend', () => {
-//            jumpingToSection = false;
-//            contentTitle.textContent = sectionTitles[section.id];
-//            setActiveMenuItem(activeCard.id, false);
-//            setupCardStyle(activeCard, true);
-//    //        setActiveMenuItem(sectionId);
-//        }, { once: true });
-////        }, 500);
-//        
-//        
-//    }
-//}
-
 function scrollToSection(sectionId) {
     jumpingToSection = true;
 
@@ -220,7 +193,6 @@ window.onload = async function() {
     const section = params.get('section');
     
     if (section) {
-//        show_content(section);
         scrollToSection(section);
     } else {
         scrollToSection('about');

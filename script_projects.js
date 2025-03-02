@@ -63,7 +63,7 @@ function show_content(project) {
     projectElement.classList.add('active');
     const newMaxHeight = projectContent.scrollHeight + 130;
     projectContent.style.maxHeight = newMaxHeight + "px";
-    projectContent.style.padding = "1.9rem";
+    projectContent.style.padding = "1.9rem 0rem";
     
     if (project === "modeling-content") {
         initialScrollForModeling();

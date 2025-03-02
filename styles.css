@@ -49,6 +49,14 @@ p {
     margin: 0.5rem 0rem;
 }
 
+ul {
+    list-style: none;
+}
+
+.ul-no-tab {
+    padding: 0;
+}
+
 
 /* MENU */
 /* container for head line */
@@ -886,12 +894,12 @@ footer p {
 }
 
 .project-content.active {
-/*    max-height: 62.5rem;*/
     opacity: 1;
 }
 
 .project-content h2 {
     text-align: center;
+    margin-top: 1rem;
 }
 
 .project-content ul il p span {
@@ -901,6 +909,7 @@ footer p {
 
 .project-content p {
     font-size: var(--s-font-size);
+    margin: 0.5rem;
 }
 
 .project-contnet-img {
@@ -908,16 +917,10 @@ footer p {
     padding: 0.625rem;
 }
 
-@media (max-width: 750px) {
-    .project-contnet-img{
-        margin: 0;
-    }
-}
-
 .project-contnet-img img {
     margin: 3.2rem;
     border-radius: 0.625rem;
-    width: 31.25rem;
+    width: 30rem;
 }
 
 .project-inline {
@@ -925,9 +928,8 @@ footer p {
 }
 
 .project-img-inline {
-    float: right;
-    margin: 1.25rem;
-    padding: 1.25rem;
+/*    float: right;*/
+    margin: 1.25rem 0 1.25rem 3rem;
     max-width: 44rem;
     height: auto;
 }
@@ -937,21 +939,76 @@ footer p {
     display: block;
 }
 
-.project-content ul il p {
-    margin: 0.5rem;
+span.highlight {
+    margin-top: 2rem !important;
+    font-size: var(--m-font-size) !important;
 }
 
 p.highlight2 {
-    font-size: var(--s-font-size);
+    font-size: var(--s-font-size) !important;
     text-transform: uppercase;
-    margin-top: 1.875rem !important;
-    margin-top: 0.8rem !important;
+    margin-top: 1.3rem !important;
+}
+
+.dots {
+    list-style: circle;
 }
 
 .project-text {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 950px) {
+    .project-img-inline{
+        float: right;
+    }
+    .project-text {
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 950px) {
+    .project-inline {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-content p {
+        font-size: var(--xs-font-size);
+        text-align: justify;
+    }
+    .project-content ul il p span {
+        font-size: var(--s-font-size);
+    }
+    .project-contnet-img{
+        margin: 0;
+    }
+    .project-content h2 {
+        font-size: var(--s-font-size);
+    }
+    p.highlight2 {
+        font-size: var(--xxs-font-size);
+    }
+    .project-img-inline {
+        width: 80vw;
+        margin: 0;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-img-inline img {
+        width: 80vw;
+        align-content: center;
+    }
+    .project-text {
+        display: flex;
+    }
 }
 
 iframe {
