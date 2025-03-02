@@ -272,6 +272,9 @@ main {
     #main-card {
         overflow-x: scroll;
     }
+    .card {
+        padding-bottom: 1rem;
+    }
     
 }
 
@@ -580,7 +583,7 @@ main {
 
 #skills img {
     max-height: 40vw;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 
@@ -655,6 +658,9 @@ main {
 }
 
 @media (max-width: 750px) {
+    #contact {
+        margin-bottom: 0rem;
+    }
     .contact-content {
         gap: 2rem;
     }
@@ -701,6 +707,10 @@ footer p {
 .menu a{
     text-decoration: none;
     color: inherit;
+}
+
+footer {
+    margin-top: 1rem;
 }
 
 #projects-footer {
@@ -788,12 +798,23 @@ footer p {
         all 0.3s ease 0s;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
     .project-carousel {
         gap: 0;
     }
     .project {
-        width: 5rem;
+        width: 9rem;
+        padding: 1rem 0.3rem;
+        height: 16rem;
+        font-size: var(--xxs-font-size);
+        margin: 0.4rem;
+        border-radius: 0.9rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .project {
+        width: 5.5rem;
         padding: 1rem 0.3rem;
         height: 9rem;
         font-size: var(--xxs-font-size);
@@ -867,14 +888,15 @@ footer p {
     background-color: rgb(100, 100, 100, 0.1);
     border-radius: 1.9rem;
     box-shadow: 0 4px 1px rgba(1, 1, 1, 0.2);
+    will-change: max-height, height, padding, margin;
     transition:
-        all 0.7s ease,
+/*        all 0.7s ease,*/
         max-height 0.7s ease;
     overflow-y: scroll;
     overflow-x: scroll;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 950px) {
     .content-card {
         margin: 0;
         width: 95vw;
@@ -986,13 +1008,13 @@ p.highlight2 {
         text-align: justify;
     }
     .project-content ul il p span {
-        font-size: var(--s-font-size);
+        font-size: var(--m-font-size);
     }
     .project-contnet-img{
         margin: 0;
     }
     .project-content h2 {
-        font-size: var(--s-font-size);
+        font-size: var(--m-font-size);
     }
     p.highlight2 {
         font-size: var(--xxs-font-size);
@@ -1012,6 +1034,18 @@ p.highlight2 {
     }
     .project-text {
         display: flex;
+    }
+}
+
+@media (max-width: 750px) {
+    .project-content p {
+        font-size: var(--xxs-font-size);
+    }
+    .project-content h2 {
+        font-size: var(--s-font-size);
+    }
+    span.highlight {
+        font-size: var(--xs-font-size) !important;
     }
 }
 
@@ -1054,6 +1088,7 @@ iframe {
 #animation-content .small-img-row {
     justify-content: space-around;
     gap: 3.2rem;
+    flex-wrap: wrap;
 }
 
 .small-img-row img:first-child {
@@ -1129,9 +1164,26 @@ iframe {
 }
 
 #web-dev-content .content {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 6.25rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 750px) {
+    #web-dev-content .content {
+        gap: 0rem;
+    }
+    .gallery-img img {
+        padding: 1rem;
+    }
+    #designFirst {
+    margin-left: 2rem;
+    }
+    #designLast {
+        margin-right: 2rem;
+    }
 }
 
 #web-dev-content .content p {
@@ -1152,11 +1204,13 @@ iframe {
 }
 
 #interior-content img {
-    max-width: 60vw;
+    max-width: 70vw;
     border-radius: 1.25rem;
     margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
-
+    #interior-content img {
+        max-width: 85vw;
+    }
 }
