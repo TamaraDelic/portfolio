@@ -155,7 +155,7 @@ header {
 
 .dropdown-item {
     margin: 0rem;
-    font-size: var(--xs-font-size);
+    font-size: var(--xxs-font-size);
     height: 2.8rem;
     text-align: center;
     align-content: center;
@@ -173,11 +173,7 @@ header {
         padding-left: 0rem;
     }
 }
-@media (min-width: 750px) {
-    #Menu {
-        display: none;
-    }
-}
+
 
 /* only for wide screen show menu text */
 @media (min-width: 950px) {
@@ -195,9 +191,6 @@ header {
         transform: scale(1.3);
         margin: 0.5rem 0.5rem;
     }
-    #Menu {
-        display: none;
-    }
     #header-title {
         font-size: var(--xl-font-size);
     }
@@ -206,6 +199,12 @@ header {
 @media (min-width: 1200px) {
     #header-title {
         font-size: var(--xxl-font-size);
+    }
+}
+
+@media (min-width: 751px) {
+    #Menu {
+        display: none;
     }
 }
 
@@ -259,6 +258,10 @@ header {
     }
 }
 */
+
+#header a {
+    padding-top: 0.5rem;
+}
 
 
 /* MAIN CONTENT */
