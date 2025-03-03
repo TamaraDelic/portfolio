@@ -85,7 +85,7 @@ header {
 
 /* title changed based on card content */
 #header-title {
-    font-size: var(--xxl-font-size);
+    font-size: var(--xl-font-size);
     color: var(--light-color);
 }
 
@@ -172,6 +172,8 @@ header {
         font-size: var(--xl-font-size);
         padding-left: 0rem;
     }
+}
+@media (min-width: 750px) {
     #Menu {
         display: none;
     }
@@ -197,11 +199,42 @@ header {
         display: none;
     }
     #header-title {
+        font-size: var(--xl-font-size);
+    }
+}
+
+@media (min-width: 1200px) {
+    #header-title {
         font-size: var(--xxl-font-size);
     }
 }
 
+@media (max-width: 750px) {
+    .menu {
+        gap: 0.3rem;
+    }
+    #header-content {
+        padding: 0.3rem 1.4rem;
+    }
+    #header-title {
+        font-size: var(--l-font-size);
+        padding-left: 0.4rem;
+    }
+    .menu-icon {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+    .menu-item:not(.active) {
+        display: none;
+    }
+    .menu-item:hover .menu-icon, .active .menu-icon {
+        transform: scale(1.25);
+        margin: 0.24rem;
+    }
+}
+
 /* small screen only pops up icon and change its color */
+/*
 @media (max-width: 450px) {
     .menu {
         gap: 0.3rem;
@@ -225,6 +258,7 @@ header {
         margin: 0.24rem;
     }
 }
+*/
 
 
 /* MAIN CONTENT */
@@ -917,7 +951,7 @@ footer {
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 750px) {
     .content-card {
         max-height: 30rem;
     }
@@ -1096,6 +1130,7 @@ iframe {
 .big-image {
     height: 22rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: -0.625rem;
@@ -1155,6 +1190,24 @@ iframe {
 
 .small-img.active {
     border-radius: 3.75rem;
+}
+
+@media (max-width: 950px) {
+    .big-image {
+        height: 18rem;
+    }
+    .big-image img {
+        max-width: 500px;
+        width: 90vw;
+        height: auto;
+    }
+    .small-img {
+        width: 7rem;
+    }
+    .small-img-row {
+        gap: 0.2rem;
+        padding-top: 0.95rem;
+    }
 }
 
 .gallery-imgs {

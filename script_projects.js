@@ -26,8 +26,8 @@ function initialScrollForModeling() {
     const scrollElement = document.getElementById('scroller');
 
     if (targetElement) {
-        const elementPosition = targetElement.getBoundingClientRect().left + window.scrollX - 880;
-        console.log(elementPosition);
+//        const elementPosition = targetElement.getBoundingClientRect().left + window.scrollX - 880;
+        const elementPosition = targetElement.getBoundingClientRect().left - 300;
         scrollElement.scrollTo({
             left: elementPosition,
             behavior: 'smooth'
