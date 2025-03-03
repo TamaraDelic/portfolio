@@ -191,7 +191,6 @@ window.addEventListener('scroll', onScroll);
 window.onload = async function() {
     const params = new URLSearchParams(window.location.search);
     const section = params.get('section');
-    
     if (section) {
         scrollToSection(section);
     } else {

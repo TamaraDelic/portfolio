@@ -36,9 +36,7 @@ function initialScrollForModeling() {
 }
 
 function show_content(project) {
-    console.log(project);
     const projectElement = document.getElementById(project.replace("-content", ""));
-    console.log(projectElement);
     const projectContent = document.getElementById(project);
     if (projectContent.classList.contains('active')) {
         projectContent.classList.remove('active');
@@ -71,25 +69,23 @@ function show_content(project) {
 }
 
 
-function scrollToContent(project) {
-        
+function scrollToContent(project) {        
     let projectContentElement = document.getElementById(project);
-    
     let offset = 210;
-    
-    let interval = 0; // 20
+        
+    let interval = 20; // 20
     if (["web-dev", "design", "interior"].indexOf(project) != -1) {
         interval = 300;
-    }
-    
+    }    
     
     if (!projectContentElement) return;
-
     // Wait until .card-content height exceeds 50px
     const checkHeight = setInterval(() => {
-        if (projectContentElement.scrollHeight > 150) {
+        if (projectContentElement.scrollHeight > 130) {
             clearInterval(checkHeight); // Stop checking once height is big enough
-
+            if (projectContentElement.scrollHeight < 400) {
+                offset = 30;
+            }
             // Calculate and scroll to the correct position
             const elementPosition = projectContentElement.getBoundingClientRect().top + window.scrollY;
             const offsetPosition = elementPosition + offset;
@@ -111,10 +107,10 @@ function scrollToContent(project) {
 window.onload = async function() {
     const params = new URLSearchParams(window.location.search);
     const project = params.get('project');
-    
+        
     if (project) {
         show_content(project + "-content");
-        scrollToContent(project, );
+        scrollToContent(project);
     }
 };
 
@@ -128,9 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-
-// mobile resize
-// sredi resume
 // prijavi se
 // pack into atlas
 // freelance
