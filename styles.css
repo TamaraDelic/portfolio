@@ -485,6 +485,7 @@ main {
     width: 100%;
     opacity: 0;
     height: 0%;
+    z-index: -1;
     transition:
         all 0.7s ease 0.1s;
 }
@@ -528,7 +529,11 @@ main {
         opacity 0.8s ease 0.7s;
 }
 
-.category:hover .multi-project-names a {
+.category:hover .multi-project-names, .category.expanded .multi-project-names {
+    z-index: 1;   
+}
+
+.category:hover .multi-project-names a, .category.expanded .multi-project-names a {
     pointer-events: auto;
 }
 

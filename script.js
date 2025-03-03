@@ -121,6 +121,19 @@ function openMenu() {
 }
 
 
+function expandCategory(categoryNum) {
+    console.log("multi-project-" + categoryNum);
+    const categoryElement = document.getElementById("multi-project-" + categoryNum);
+    
+    if (categoryElement) {
+        const allcategories = document.querySelectorAll('.category');
+        allcategories.forEach(item=>{
+            item.classList.remove("expanded");
+        });
+        categoryElement.classList.add("expanded");
+    }
+}
+
 
 // Function to track the scroll position and update card visibility
 //window.addEventListener('scroll', async () => {
