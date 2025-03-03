@@ -299,7 +299,7 @@ main {
     border-radius: 0.5rem;
     opacity: 0;
 /*    right: -8.125rem;*/
-/*    transform: translateX(8.125rem);*/
+    transform: translateX(8.125rem);
     will-change: opacity, transform;
     transition:
         opacity 0.5s ease-out,
@@ -319,7 +319,7 @@ main {
 
 .visible {
     opacity: 1;
-/*    transform: translateX(0);*/
+    transform: translateX(0);
 }
 
 .highlight{
