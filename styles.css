@@ -500,6 +500,7 @@ main {
     text-decoration: none;
     color: var(--light-tr-color);
     font-weight: 600;
+    pointer-events: none;
 }
 
 .multi-project-names a:visited {
@@ -525,6 +526,10 @@ main {
     transition:
         var(--transition-slow),
         opacity 0.8s ease 0.7s;
+}
+
+.category:hover .multi-project-names a {
+    pointer-events: auto;
 }
 
 .category h3 {
