@@ -56,6 +56,9 @@ function show_content(project) {
         item.classList.remove('active');
         item.style.maxHeight = "0px";
         item.style.padding = "0px";
+        const itemCardContent = item.closest('.content-card');
+        itemCardContent.style.overflowX = 'none';
+        itemCardContent.style.overflowY = 'none';
     });
     const all_projects = document.querySelectorAll('.project');
     all_projects.forEach(item => {
@@ -73,8 +76,8 @@ function show_content(project) {
     if (project === "modeling-content") {
         initialScrollForModeling();
     } else {
-        cardContent.style.overflowX = 'scroll';
-        cardContent.style.overflowY = 'scroll';
+        cardContent.style.overflowX = 'auto';
+        cardContent.style.overflowY = 'auto';
     }
 }
 
