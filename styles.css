@@ -135,6 +135,13 @@ header {
 }
 
 /* Dropdown Menu */
+#Menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
 .dropdown-menu {
     list-style: none;
     position: absolute;
@@ -260,7 +267,10 @@ header {
 */
 
 #header a {
-    padding-top: 0.5rem;
+/*    padding-top: 0.5rem;*/
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 
@@ -499,7 +509,7 @@ main {
     text-align: center;
     font-size: 1.25rem;
     text-decoration: none;
-    color: var(--light-tr-color);
+    color: var(--light-color);/*    rgb(85, 208, 156);*/
     font-weight: 600;
     pointer-events: none;
 }
@@ -953,8 +963,8 @@ footer {
     transition:
 /*        all 0.7s ease,*/
         max-height 0.7s ease;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow-y: none;
+    overflow-x: none;
 }
 
 @media (max-width: 950px) {

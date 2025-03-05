@@ -36,13 +36,18 @@ function initialScrollForModeling() {
 }
 
 function show_content(project) {
+    
     const projectElement = document.getElementById(project.replace("-content", ""));
     const projectContent = document.getElementById(project);
+    const cardContent = projectContent.closest('.content-card');
+    
     if (projectContent.classList.contains('active')) {
         projectContent.classList.remove('active');
         projectElement.classList.remove('active');
         projectContent.style.maxHeight = "0px";
         projectContent.style.padding = "0px";
+        cardContent.style.overflowX = 'none';
+        cardContent.style.overflowY = 'none';
         return;
     }
     
@@ -62,6 +67,9 @@ function show_content(project) {
     const newMaxHeight = projectContent.scrollHeight + 130;
     projectContent.style.maxHeight = newMaxHeight + "px";
     projectContent.style.padding = "1.9rem 0rem";
+    
+    cardContent.style.overflowX = 'scroll';
+    cardContent.style.overflowY = 'scroll';
     
     if (project === "modeling-content") {
         initialScrollForModeling();
