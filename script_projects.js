@@ -68,11 +68,13 @@ function show_content(project) {
     projectContent.style.maxHeight = newMaxHeight + "px";
     projectContent.style.padding = "1.9rem 0rem";
     
-    cardContent.style.overflowX = 'scroll';
-    cardContent.style.overflowY = 'scroll';
+    
     
     if (project === "modeling-content") {
         initialScrollForModeling();
+    } else {
+        cardContent.style.overflowX = 'scroll';
+        cardContent.style.overflowY = 'scroll';
     }
 }
 

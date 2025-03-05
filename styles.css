@@ -469,7 +469,8 @@ main {
 
 .category:hover {
     padding: 1.9rem 1.25rem 0rem 1.25rem;
-    background-color: rgb(100, 100, 100, 0.1);
+    background-color: rgb(180, 180, 180, 0.1);
+/*    background-color: rgb(100, 100, 100, 0.1);*/
 }
 
 #multi-project-1:hover {
@@ -509,17 +510,21 @@ main {
     text-align: center;
     font-size: 1.25rem;
     text-decoration: none;
-    color: var(--light-color);/*    rgb(85, 208, 156);*/
+    /*color: var(--light-color);*/
+    color: rgb(124, 124, 124);
     font-weight: 600;
     pointer-events: none;
 }
 
+/*
 .multi-project-names a:visited {
-    color: var(--light-tr-color);
+    color: var(--light-color);
 }
+*/
 
 .multi-project-names a:hover {
-    color: rgb(116, 203, 166);
+/*    color: rgb(116, 203, 166);*/
+    color: var(--light-color);
     transform: scale(1.08);
 }
 
@@ -591,7 +596,8 @@ main {
 
 .multi-project-names span{
     font-size: var(--xs-font-size);
-    color: rgb(116, 203, 166);
+    color: rgb(124, 124, 124);
+/*    color: rgb(116, 203, 166);*/
     text-align: center;
     margin-top: -0.5rem;
     margin-bottom: 0.18rem;
